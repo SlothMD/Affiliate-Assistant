@@ -1,0 +1,32 @@
+﻿default:
+  name: "deploy_default"
+  description: "Generic deploy-safe tone for all clients/stores when no private override is matched."
+  style:
+    voice: "clear, concise, factual"
+    energy: "moderate"
+    cta: "low-pressure, informative"
+  rules:
+    - "State product benefits before implementation details."
+    - "Include one caveat or tradeoff where applicable."
+    - "Avoid unverifiable superlatives and hype language."
+
+clients:
+  sample_client:
+    default:
+      name: "client_default_placeholder"
+      description: "Placeholder only. Real client tone belongs in private config."
+      style:
+        voice: "neutral"
+        energy: "moderate"
+    store_channels:
+      sample_store_channel:
+        name: "store_channel_placeholder"
+        description: "Placeholder only. Real store/channel tone belongs in private config."
+        style:
+          voice: "neutral"
+          energy: "moderate"
+
+resolution_order:
+  - "clients.<client>.store_channels.<store_channel>"
+  - "clients.<client>.default"
+  - "default"
